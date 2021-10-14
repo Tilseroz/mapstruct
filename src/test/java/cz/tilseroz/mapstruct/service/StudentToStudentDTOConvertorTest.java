@@ -16,6 +16,8 @@ class StudentToStudentDTOConvertorTest {
         StudentToStudentDTOConvertor studentToStudentDTOConvertor = new StudentToStudentDTOConvertor();
         Student student = createStudent();
         StudentDto studentDTO = studentToStudentDTOConvertor.studentToStudentDTOConvertor(student);
+
+
         assertEquals("Marcel", studentDTO.getUsername());
         assertEquals("heslo123", studentDTO.getPassword());
         assertEquals("test@example.cz", studentDTO.getEmail());
@@ -26,6 +28,8 @@ class StudentToStudentDTOConvertorTest {
     void studentToStudentDTOConvertorWithMapStruct() {
         Student student = createStudent();
         StudentDto studentDTO = StudentToStudentDTOMapper.INSTANCE.map(student);
+
+
         assertEquals("Marcel", studentDTO.getUsername());
         assertEquals("heslo123", studentDTO.getPassword());
         assertEquals("test@example.cz", studentDTO.getEmail());
