@@ -7,9 +7,9 @@ import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
-public interface StudentToStudentDTOMapper {
+public interface StudentToStudentDtoMapper {
 
-    StudentToStudentDTOMapper INSTANCE = Mappers.getMapper(StudentToStudentDTOMapper.class);
+    StudentToStudentDtoMapper INSTANCE = Mappers.getMapper(StudentToStudentDtoMapper.class);
 
     @Mapping(source = "name", target = "username")
     @Mapping(source = "record.title", target = "title")

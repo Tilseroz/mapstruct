@@ -4,16 +4,16 @@ import cz.tilseroz.mapstruct.dto.StudentDto;
 import cz.tilseroz.mapstruct.entity.Address;
 import cz.tilseroz.mapstruct.entity.Record;
 import cz.tilseroz.mapstruct.entity.Student;
-import cz.tilseroz.mapstruct.mapper.StudentToStudentDTOMapper;
+import cz.tilseroz.mapstruct.mapper.StudentToStudentDtoMapper;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StudentToStudentDTOConvertorTest {
+class StudentToStudentDtoConvertorTest {
 
     @Test
     void studentToStudentDTOConvertor() {
-        StudentToStudentDTOConvertor studentToStudentDTOConvertor = new StudentToStudentDTOConvertor();
+        StudentToStudentDtoConvertor studentToStudentDTOConvertor = new StudentToStudentDtoConvertor();
         Student student = createStudent();
         StudentDto studentDTO = studentToStudentDTOConvertor.studentToStudentDTOConvertor(student);
 
@@ -27,7 +27,7 @@ class StudentToStudentDTOConvertorTest {
     @Test
     void studentToStudentDTOConvertorWithMapStruct() {
         Student student = createStudent();
-        StudentDto studentDTO = StudentToStudentDTOMapper.INSTANCE.map(student);
+        StudentDto studentDTO = StudentToStudentDtoMapper.INSTANCE.map(student);
 
 
         assertEquals("Marcel", studentDTO.getUsername());

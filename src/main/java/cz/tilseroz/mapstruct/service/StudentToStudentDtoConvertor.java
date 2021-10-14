@@ -2,9 +2,9 @@ package cz.tilseroz.mapstruct.service;
 
 import cz.tilseroz.mapstruct.dto.StudentDto;
 import cz.tilseroz.mapstruct.entity.Student;
-import cz.tilseroz.mapstruct.mapper.StudentToStudentDTOMapper;
+import cz.tilseroz.mapstruct.mapper.StudentToStudentDtoMapper;
 
-public class StudentToStudentDTOConvertor {
+public class StudentToStudentDtoConvertor {
 
     public StudentDto studentToStudentDTOConvertor(Student student) {
         StudentDto studentDTO = new StudentDto();
@@ -19,6 +19,6 @@ public class StudentToStudentDTOConvertor {
 
 
     public StudentDto studentToStudentDTOConvertorWithMapStruct(Student student) {
-        return StudentToStudentDTOMapper.INSTANCE.map(student);
+        return StudentToStudentDtoMapper.INSTANCE.map(student);
     }
 }
