@@ -2,6 +2,7 @@ package cz.tilseroz.mapstruct.service;
 
 import cz.tilseroz.mapstruct.dto.StudentDto;
 import cz.tilseroz.mapstruct.entity.Address;
+import cz.tilseroz.mapstruct.entity.Record;
 import cz.tilseroz.mapstruct.entity.Student;
 import cz.tilseroz.mapstruct.mapper.StudentToStudentDTOMapper;
 import org.junit.jupiter.api.Test;
@@ -29,6 +30,7 @@ class StudentToStudentDTOConvertorTest {
         assertEquals("heslo123", studentDTO.getPassword());
         assertEquals("test@example.cz", studentDTO.getEmail());
         assertEquals("Blansko", studentDTO.getAddress().getCity());
+        assertEquals("titul", studentDTO.getTitle());
     }
 
     private Student createStudent() {
@@ -39,6 +41,7 @@ class StudentToStudentDTOConvertorTest {
                 .isActive(true)
                 .password("heslo123")
                 .email("test@example.cz")
+                .record(new Record("titul", "note"))
                 .build();
     }
 }

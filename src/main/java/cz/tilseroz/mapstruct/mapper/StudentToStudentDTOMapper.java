@@ -12,5 +12,6 @@ public interface StudentToStudentDTOMapper {
     StudentToStudentDTOMapper INSTANCE = Mappers.getMapper(StudentToStudentDTOMapper.class);
 
     @Mapping(source = "name", target = "username")
+    @Mapping(source = "record.title", target = "title")
     StudentDto map(Student student);
 }

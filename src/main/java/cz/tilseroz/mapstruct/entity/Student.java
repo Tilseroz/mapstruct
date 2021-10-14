@@ -13,5 +13,6 @@ public class Student {
     private String email;
     private String password;
     private boolean isActive;
+    private Record record;
 
 }

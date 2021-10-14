@@ -12,4 +12,5 @@ public class StudentDto {
     private String email;
     private String password;
     private boolean isActive;
+    private String title;
 }
