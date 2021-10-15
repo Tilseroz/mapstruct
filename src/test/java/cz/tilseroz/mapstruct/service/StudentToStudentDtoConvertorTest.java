@@ -22,6 +22,8 @@ class StudentToStudentDtoConvertorTest {
         assertEquals("heslo123", studentDTO.getPassword());
         assertEquals("test@example.cz", studentDTO.getEmail());
         assertEquals("Blansko", studentDTO.getAddress().getCity());
+        assertEquals("titul", studentDTO.getTitle());
+//        assertEquals(null, studentDTO.getTitle());
     }
 
     @Test
@@ -35,6 +37,7 @@ class StudentToStudentDtoConvertorTest {
         assertEquals("test@example.cz", studentDTO.getEmail());
         assertEquals("Blansko", studentDTO.getAddress().getCity());
         assertEquals("titul", studentDTO.getTitle());
+//        assertEquals(null, studentDTO.getTitle());
     }
 
     private Student createStudent() {
@@ -46,6 +49,7 @@ class StudentToStudentDtoConvertorTest {
                 .password("heslo123")
                 .email("test@example.cz")
                 .record(new Record("titul", "note"))
+//                .record(null)
                 .build();
     }
 }

@@ -14,6 +14,7 @@ public class StudentToStudentDtoConvertor {
         studentDTO.setEmail(student.getEmail());
         studentDTO.setActive(student.isActive());
         studentDTO.setPassword(student.getPassword());
+        studentDTO.setTitle(student.getRecord().getTitle());
         return studentDTO;
     }
 
