@@ -4,6 +4,7 @@ import cz.tilseroz.mapstruct.dto.StudentDto;
 import cz.tilseroz.mapstruct.entity.Address;
 import cz.tilseroz.mapstruct.entity.Record;
 import cz.tilseroz.mapstruct.entity.Student;
+import cz.tilseroz.mapstruct.entity.StudentNoLombok;
 import cz.tilseroz.mapstruct.mapper.StudentToStudentDtoMapper;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +24,7 @@ class StudentToStudentDtoConvertorTest {
         assertEquals("test@example.cz", studentDTO.getEmail());
         assertEquals("Blansko", studentDTO.getAddress().getCity());
         assertEquals("titul", studentDTO.getTitle());
-//        assertEquals(null, studentDTO.getTitle());
+//        assertNull(studentDTO.getTitle());
     }
 
     @Test
@@ -37,7 +38,7 @@ class StudentToStudentDtoConvertorTest {
         assertEquals("test@example.cz", studentDTO.getEmail());
         assertEquals("Blansko", studentDTO.getAddress().getCity());
         assertEquals("titul", studentDTO.getTitle());
-//        assertEquals(null, studentDTO.getTitle());
+//        assertNull(studentDTO.getTitle());
     }
 
     private Student createStudent() {
@@ -50,6 +51,20 @@ class StudentToStudentDtoConvertorTest {
                 .email("test@example.cz")
                 .record(new Record("titul", "note"))
 //                .record(null)
+                .build();
+    }
+
+
+    private StudentNoLombok createStudentNoLombok() {
+        return new StudentNoLombok.Builder()
+                .name("Marcel")
+                .address(new Address("Severská", "Blansko", "67809"))
+                .id(5L)
+                .isActive(true)
+                .password("heslo123")
+                .email("test@example.cz")
+//                .record(new Record("titul", "note"))
+                .record(null)
                 .build();
     }
 }
